@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="css/Feedback.css" type="text/css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBSw22BsnULcw6u59HsNH7hR6_bImxmsdg",
+            authDomain: "lab9-7185f.firebaseapp.com",
+            databaseURL: "https://lab9-7185f.firebaseio.com",
+            projectId: "lab9-7185f",
+            storageBucket: "lab9-7185f.appspot.com",
+            messagingSenderId: "793441486896"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        function addData(){
+            alert("adding data");
+            var product_name = document.getElementById("pname").value;
+            var product_price = document.getElementById("price").value;
+            var product_image = document.getElementById("image").value;
+            db.collection("products").add({
+                productname: product_name,
+                productprice: product_price,
+                productimage: product_image
+            })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    //update the products view
+                    getProducts();
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+        }
+    </script>
+</head>
+<body id="zhongzi">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="Myhome.html">All About Nanyu XU</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Nanyu.html">Home</a>
+            </li>
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Education
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="WCC.html">WCC</a>
+                    <a class="dropdown-item" href="UMN.html">UMN</a>
+                    <a class="dropdown-item" href="UCSB.html">UCSB</a>
+                    <a class="dropdown-item" href="BCIT.html">BCIT</a>
+                </div>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="Experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Career.html">Career</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Feedback.html">Feedback<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h1 id="products">Temp</h1>
+
+<form method="post" action="#">
+    Name:<br>
+    <input type="text" name="pname" id="pname"><br>
+    Date:<br>
+    <input type="text" name="date" id="data"><br>
+    Feedback:<br>
+    <input type="text" name="image" id="image"><br>
+    <button type="button" onclick="addData()">Add Feedback</button>
+</form>
+
+<div class="text-right">
+    ©2019_All Nancy Rights Reserved
+</div>
+
+<script>
+    var productdisplay = document.getElementById('products');
+    productdisplay.innerHTML = "FeedBack";
+    var db = firebase.firestore();
+    db.collection("products").get().then((querySnapshot) => {
+        alert("Data Recieved");
+
+        productdisplay.innerHTML = "";
+
+        querySnapshot.forEach((doc) => {
+            productdisplay.innerHTML += (doc.data().productname + " "+"<br>" + doc.data().productprice + " " + "<br>"+ doc.data(). productimage +" "+"<br>");
+        });
+    });
+</script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

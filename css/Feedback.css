@@ -1,0 +1,11 @@
+#zhongzi{
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("zhongzi.gif");
+    background-position: center;
+    background-size: cover;
+}
+
+#pink{
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("pink.png");
+    background-position: center;
+    background-size: cover;
+}
