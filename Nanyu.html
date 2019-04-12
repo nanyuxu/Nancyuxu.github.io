@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>UMN</title>
-    <link rel="stylesheet" href="css/UMN.css" type="text/css" />
+    <title>HOME</title>
+
 </head>
 <body>
-<script src="js/UMN.js"></script>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="Myhome.html">All About Nanyu XU</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,8 +18,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="Nanyu.html">Home</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="Nanyu.html">Home<span class="sr-only">(current)</span></a>
             </li>
             <div class="dropdown">
                 <button class="btn btn-success dropdown-toggle" type="button" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,22 +48,51 @@
         </ul>
     </div>
 </nav>
-<div id="gopher">
-    <div class="container">
+
+
+<div class="card text-dark">
+    <img class="card-img" src="images/math.gif" height="550" width="540" alt="Card image">
+    <div class="card-img-overlay">
+        <p>
+            <a class="btn btn-primary btn-lg" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Name</a>
+            <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Information</button>
+            <button class="btn btn-danger btn-lg" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Hobbies</button>
+            <button class="btn btn-info btn-lg" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Favorite</button>
+            <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2 multiCollapseExample3 multiCollapseExample4">Show All</button>
+        </p>
         <div class="row">
-            <div class="col-sm">
-                <img src="images/umn.png" class="img-fluid goph" alt="Responsive image" id="image1" onclick="change()">
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+                        First Name: Nanyu<br>Last Name: XU<br>English Name: Nancy<br>Nickname: YuYu
+                    </div>
+                </div>
             </div>
-            <div class="col-sm umntext">
-                University of Minnesota Twin Cities(UMN) was my first university in America after I graduated from Whatcom Community college. It located in the edge of the cities Minneapolis and Saint Paul in Minnesota state. The Mississippi River divided the school into two parts, which was east bank and west bank. We usually say east bank in Saint Paul, and west bank in Minneapolis. Most of the buildings located on the east bank; however, Carlson School of Management located on the west bank, which was the building I took account and economics classes. I would like to say I began my real university life in UMN. However, because of the extremely bad weather, my body health situation became worse, and I always had a fewer. All parents love their children! My parents advised me to transfer to a university which in a warm state; therefore, I came to California.
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card card-body">
+                        Age: 22<br>Citizenship：China<br>Birthday: April 14, 1997<br>Blood Type: A<br>Constellation: Aries
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample3">
+                    <div class="card card-body">
+                        Sleeping<br>Running<br>Swimming<br>Hiking
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample4">
+                    <div class="card card-body">
+                        Color: Blue/Green<br>Food: Korean Cold Noodle/Japanese BBQ/Chinese sweet&sour food<br>Pet: Cats<br>Brand: Kate Spade/Michael Michael Kors<br>Female Group: Girls'Generation/TWICE/AKB48<br>Male Group: EXO/BTS
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <div class="container">
-        <div class="text-right">
-            ©2019_All Nancy Rights Reserved
-        </div>
+    <div class="text-right">
+        ©2019_All Nancy Rights Reserved
     </div>
 </div>
 <!-- Optional JavaScript -->
